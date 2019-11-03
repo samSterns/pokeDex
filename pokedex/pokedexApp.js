@@ -22,9 +22,10 @@ class PokedexApp extends Component {
         const pokeList = new PokeList({ pokemon: [] });
         dom.appendChild(pokeList.renderDOM());
 
-        const response = await getPoke();
-        const pokemon = response.Search;
-        pokeList.update({ pokemon: pokemon });
+        const pokemon = await getPoke();
+        const results = pokemon.results;
+
+        pokeList.update({ pokemon: results });
     }
 
     renderHTML() {
