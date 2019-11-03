@@ -6,8 +6,7 @@ class Header extends Component {
         <section>
             <header class="header">
                 <nav class="main-nav">
-                    <div class="nav-home"><a href="">Home</a></div>
-                    <div class="nav-home"><a href="">PlaceHolder</a></div>
+                    <div class="nav-home"><a href="index.html">Home</a></div>
                 </nav>
 
                 <h1>PokeDex</h1>
