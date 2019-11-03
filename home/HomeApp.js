@@ -12,7 +12,7 @@ class HomeApp extends Component {
     renderHTML() {
         return /*html*/`
             <div>
-                <!-- header goes here -->
+                
                 <main>
                     <p>
                         <a href="pokedex.html">Explore Pokemon</a>

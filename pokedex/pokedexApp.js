@@ -8,25 +8,23 @@ import { getPoke } from '../services/pokedex-api.js';
 class PokedexApp extends Component {
 
     async onRender(dom){
-        
         const header = new Header();        
         dom.prepend(header.renderDOM());
 
-        const optionsSection = dom.querySelector('.searchbar-section');
+        // const optionsSection = dom.querySelector('.searchbar-section');
         const searchOptions = new SearchOptions();
-        optionsSection.prepend(searchOptions.renderDOM());
+        dom.appendChild(searchOptions.renderDOM());
 
-        const listSection = dom.querySelector('.paging-div');
+        // const listSection = dom.querySelector('.paging-div');
         const paging = new Paging();
-        listSection.appendChild(paging.renderDOM());
+        dom.appendChild(paging.renderDOM());
 
-        const pokeList = new PokeList({ movies: [] });
-        listSection.appendChild(pokeList.renderDOM());
+        const pokeList = new PokeList({ pokemon: [] });
+        dom.appendChild(pokeList.renderDOM());
 
         const response = await getPoke();
         const pokemon = response.Search;
         pokeList.update({ pokemon: pokemon });
-
     }
 
     renderHTML() {

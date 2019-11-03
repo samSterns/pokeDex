@@ -9,14 +9,14 @@ class PokeList extends Component {
         pokemon.forEach(pokemon => {
             const pokeItem = new PokeItem({ pokemon: pokemon });
             const pokeItemDOM = pokeItem.renderDOM();
-            dom.appendShild(pokeItemDOM);
+            dom.appendChild(pokeItemDOM);
         });
 
     }
 
     renderHTML(){
         return /*html*/ `
-        <li class="individual-poke"></li>
+            <li class="individual-poke"></li>
         `;
     }
 }
