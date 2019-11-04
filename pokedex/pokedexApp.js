@@ -11,7 +11,7 @@ class PokedexApp extends Component {
         const header = new Header();        
         dom.prepend(header.renderDOM());
 
-        // const optionsSection = dom.querySelector('.searchbar-section');
+        //const optionsSection = dom.querySelector('.searchbar-section');
         const searchOptions = new SearchOptions();
         dom.appendChild(searchOptions.renderDOM());
 
@@ -22,10 +22,18 @@ class PokedexApp extends Component {
         const pokeList = new PokeList({ pokemon: [] });
         dom.appendChild(pokeList.renderDOM());
 
-        const pokemon = await getPoke();
-        const results = pokemon.results;
+        async function loadPoke() {
 
-        pokeList.update({ pokemon: results });
+            const pokemon = await getPoke();
+            const results = pokemon.results;
+            pokeList.update({ pokemon: results });
+        }
+
+        loadPoke();
+
+        window.addEventListener('hashchange', () => {
+            loadPoke();
+        });
     }
 
     renderHTML() {
