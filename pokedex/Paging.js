@@ -48,7 +48,7 @@ class Paging extends Component {
         });
     }
     renderHTML() {
-        const perPage = 10; // this API only does 10 per
+        const perPage = 10;
         const count = this.props.count;
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
@@ -62,11 +62,6 @@ class Paging extends Component {
             page = parsedPage;
         }
 
-        // if (!count) {
-        //     return /*html*/`
-        //         <p class="paging-div">No results, try to catch another kind</p>
-        //     `;
-        // }
 
         const lastPage = Math.ceil(count / perPage);
         return /*html*/ `

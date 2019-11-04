@@ -11,11 +11,10 @@ class PokedexApp extends Component {
         const header = new Header();        
         dom.prepend(header.renderDOM());
 
-        // const optionsSection = dom.querySelector('.searchbar-section');
         const searchOptions = new SearchOptions();
         dom.appendChild(searchOptions.renderDOM());
 
-        // const listSection = dom.querySelector('.paging-div');
+        
         const paging = new Paging({ count: 0 });
         dom.appendChild(paging.renderDOM());
 

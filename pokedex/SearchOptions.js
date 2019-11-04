@@ -26,8 +26,6 @@ class SearchOptions extends Component {
             const searchParams = new URLSearchParams(queryString);
 
             searchParams.set('pokemon', formData.get('search'));
-            //reset to page 1 as this is new search and
-            //we don't know how many pages
             searchParams.set('page', 1);
 
             window.location.hash = searchParams.toString();
