@@ -48,7 +48,7 @@ class Paging extends Component {
         });
     }
     renderHTML() {
-        const perPage = 10;
+        const perPage = 20;
         const count = this.props.count;
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
@@ -64,6 +64,7 @@ class Paging extends Component {
 
 
         const lastPage = Math.ceil(count / perPage);
+
         return /*html*/ `
             <div class="paging-div">
                 <button class="prev" ${page === 1 ? 'disabled' : ''}>◀</button>
